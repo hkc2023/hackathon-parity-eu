@@ -2,9 +2,9 @@
 
 This hackathon entry is an extension to the [zkNFT project](https://github.com/ParityAsia/hackathon-2022-winter/tree/main/teams/32-zkNFT#introduce), which was subimitted to the Parity Asia Hackathon.
 
-We've extended the runtime code and provided examples on how to use the XCM features in order to mint a private NFT from another chain, such as Moonbeam. We've provided example code using both Metamask wallet, as well as Polkadot-JS wallet.
+We've extended the runtime code and provided examples on how to use the XCM features in order to mint a private NFT from another chain, such as Moonbeam. We've provided example code using both [Metamask signer](https://github.com/hkc2023/hackathon-parity-eu/blob/main/src/sdk/examples/asset-webpack-ts/index.ts#L154-L197), as well as [Polkadot-JS signer](https://github.com/hkc2023/hackathon-parity-eu/blob/main/src/sdk/examples/asset-webpack-ts/index.ts#L105-L145).
 
-Furthermore this example code is also embeded into a button in our project's makeshift front-end. Upon clicking that button a user can send a cross chain message that instructs Calamari to create a new collection and mint a new public NFT, and then privatize it.
+Furthermore this example code is also embeded into a [button in our project's makeshift front-end](https://github.com/hkc2023/hackathon-parity-eu/blob/ef560a7e47da86fc2d1654241ddcf754bedff98d/src/front-end/src/pages/NftCreatePage/CreateRemote.tsx#L130). Upon clicking that button a user can send a cross chain message that instructs Calamari to create a new collection and mint a new public NFT, and then privatize it.
 
 ## Name and summary of the project
 Remote zkNFT
