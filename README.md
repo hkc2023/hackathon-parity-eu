@@ -43,7 +43,7 @@ This product extends the architecture of the previous project `Runtime -> SDK ->
 
 ### Runtime
 
-*You can skip these steps by connecting to Moonbase Alpha permanent testnet, where they are already set up*
+*You can skip these steps by connecting to Moonbase Alpha permanent testnet, where they are already set up. Also don't forget there's a demo at docs/old/demo.mp4 if you need more clarity*
 
 To get the example going you need to launch a local network with a relay chain and two parachains. In our specific example we'll be using Rococo, Calamari and Moonbase.
 
