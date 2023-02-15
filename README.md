@@ -141,8 +141,8 @@ Finally if you want to try the front-end from our demo video you can:
     },
     "parachains": [
         {
-            "bin": "/Users/ghz/workspace/hackaton-parity-eu/src/zkNFT/target/release/manta",
-            "chain": "calamari-dev",
+            "bin": "/Users/ghz/workspace/Manta-Network/hackathon/src/zkNFT/target/release/manta",
+            "chain": "dolphin-dev",
             "nodes": [
                 {
                     "wsPort": 9801,

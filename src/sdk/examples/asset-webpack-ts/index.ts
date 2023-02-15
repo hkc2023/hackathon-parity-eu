@@ -197,7 +197,7 @@ const sendTransactXCMFromMoonbeamEthereum = async () => {
 }
 
 async function main() {
-    // await sendTransactXCMFromMoonbeamPolkadotJS();
+    //await sendTransactXCMFromMoonbeamPolkadotJS();
     await sendTransactXCMFromMoonbeamEthereum();
     console.log("END");
 }
