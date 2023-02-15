@@ -1,12 +1,16 @@
 ## Private NFTs via XCM
 
-This hackathon entry is an extension to the [zkNFT project](https://github.com/ParityAsia/hackathon-2022-winter/tree/main/teams/32-zkNFT#introduce), which was subimitted to the Parity Asia Hackathon.
+** You can find a demo of the code examples (and front-end) in **`docs/xcm/remote-mint.mkv`**
 
-We've extended the runtime code and provided examples on how to use the XCM features in order to mint a private NFT from another chain, such as Moonbeam. We've provided example code using both [Metamask signer](https://github.com/hkc2023/hackathon-parity-eu/blob/main/src/sdk/examples/asset-webpack-ts/index.ts#L154-L197), as well as [Polkadot-JS signer](https://github.com/hkc2023/hackathon-parity-eu/blob/main/src/sdk/examples/asset-webpack-ts/index.ts#L105-L145).
+This project is an extension to the [zkNFT project](https://github.com/ParityAsia/hackathon-2022-winter/tree/main/teams/32-zkNFT#introduce) project that aims to create a private NFT on one chain from another chain using XCM features. 
 
-Furthermore this example code is also embeded into a [button in our project's makeshift front-end](https://github.com/hkc2023/hackathon-parity-eu/blob/ef560a7e47da86fc2d1654241ddcf754bedff98d/src/front-end/src/pages/NftCreatePage/CreateRemote.tsx#L130). Upon clicking that button a user can send a cross chain message that instructs Calamari to create a new collection and mint a new public NFT, and then privatize it.
+The project demonstrates how to use XCM features to mint a private NFT on Manta-Network from another chain like Moonbeam. We've added example code using [Metamask signer](https://github.com/hkc2023/hackathon-parity-eu/blob/main/src/sdk/examples/asset-webpack-ts/index.ts#L154-L197) and [Polkadot-JS signer](https://github.com/hkc2023/hackathon-parity-eu/blob/main/src/sdk/examples/asset-webpack-ts/index.ts#L105-L145).
 
-** You can find a demo of the code (and front-end) in **`docs/xcm/remote-mint.mkv`**
+Furthermore we have [embedded this example code into a button](https://github.com/hkc2023/hackathon-parity-eu/blob/ef560a7e47da86fc2d1654241ddcf754bedff98d/src/front-end/src/pages/NftCreatePage/CreateRemote.tsx#L130) in the project's front-end, and upon clicking that button, a user can send a cross-chain message with a batch transaction to Calamari to create a new collection, mint a new public NFT and privatize it.
+
+The project uses XCM to transport a message from one chain with instructions to transact on another. It extends the architecture of the previous project 'Runtime -> SDK -> Signer -> Front-end', on 3 layers: runtime, SDK, and front-end.
+
+** You can find a demo of the code examples (and front-end) in **`docs/xcm/remote-mint.mkv`**
 You can also check the old hackahthon demo in `docs/old/demo.mp4`
 
 ## Name and summary of the project
@@ -39,7 +43,7 @@ This product extends the architecture of the previous project `Runtime -> SDK ->
 * `Front-end`
     - Integrated the new SDK code into a "Mint Remote" button
 
-## Build Instrucitons
+## Build Instructions
 
 ### Runtime
 
@@ -55,8 +59,8 @@ Once the network is started you need to register each parachain's asset via the 
 
 With the assets registered you need to bump the default xcmp-queue pallet weight limits, specifically the weight decay parameter to `0` and the max individual weight limit to `125000000000`. This will allow for our heavier extrinsics to be executed over xcm.
 
-The final consideration of our design is how will transaction fees be paid for the transaction sent over via xcm. The way the XCM V2 works, this has to be an account on Manta and the fees will have to be native Manta token. In order to make this account unique for each sender on another chain, we simply hash it. You can see this [derivative address generator tool](https://github.com/PureStake/xcm-tools#derivated-address-calculator-script) on how to generate this account in TypeScript code. Once you've generated it, it needs to be funded via a balances transfer with the native token on Manta. 
-In future improvements of this project, the account can be funded automatically by the sender by batching a token transfer, and the sender can get the Manta token through a DEX or a Faucet.
+The final consideration of our design is how will transaction fees be paid for the transaction sent over via xcm. The way the XCM V2 works, this has to be an account on Manta and the fees will have to be native Manta token. In order to make this account unique for each sender on another chain, we simply hash the multilocation of the sender. You can check this [derivative address generator tool](https://github.com/PureStake/xcm-tools#derivated-address-calculator-script) on how to generate this account in TypeScript code. Once you've generated it, it needs to be funded via a balances transfer with the native token on Manta. 
+In future improvements of this project, the account can be funded automatically by the sender by batching a token transfer to the rest of the XCM message. The sender can get the Manta token through a DEX or a Faucet.
 
 ### Manta-Signer
 
