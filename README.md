@@ -20,7 +20,8 @@ Remote zkNFT
 ghz
 
 ## The category of submission
-NFT.
+* Category 1: Interfaces & Experiences
+* Category 5: NFT
 
 ## An overview of what problem is being addressed
 Using privacy features from one chain on another chain via XCM.
