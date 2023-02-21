@@ -2,7 +2,9 @@
 
 ** You can find a demo of the code examples (and front-end) in **`docs/xcm/remote-mint.mkv` **
 
-** Disclaimer: The project does not have a live demo environment due to an unforseen panic in our runtime code which was deployed on the Moonbase Alpha testnet and which we didn't have time to debug and redeploy. Currently the project can only demonstrated with the above mentioned demo video or if deployed locally ** 
+** Disclaimer: The project does not have a live demo environment due to an unforseen panic in our runtime code which was deployed on the Moonbase Alpha testnet and which we didn't have time to debug and redeploy. Currently the project can only demonstrated with the above mentioned demo video or if deployed locally 
+EDIT: Our parachain on the Moonbase testnet is now operational and you can run the examples by connecting to your metamask to [Moonbase Alpha](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fwss.api.moonbase.moonbeam.network#/explorer)
+** 
 
 This project is an extension to the [zkNFT project](https://github.com/ParityAsia/hackathon-2022-winter/tree/main/teams/32-zkNFT#introduce) project that aims to create a private NFT on one chain from another chain using XCM features. 
 
